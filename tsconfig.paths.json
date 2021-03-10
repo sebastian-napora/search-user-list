@@ -3,6 +3,7 @@
     "baseUrl": "./src",
     "paths": {
       "@api/*": ["./api/*"],
+      "@styles/*": ["./styles/*"]
     }
   },
   "include": ["src"]

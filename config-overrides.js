@@ -3,12 +3,12 @@ const path = require("path");
 
 const { alias } = require("react-app-rewire-alias");
 
-const pathnameResolve = (aliasesPath) =>
-  path.resolve(__dirname, `${paths.appSrc}${aliasesPath}`);
+const pathnameResolve = (aliasesPath) => path.resolve(__dirname, `${paths.appSrc}${aliasesPath}`);
 
 const defineAliases = (config) =>
   alias({
     "@api": pathnameResolve("/api/"),
+    "@styles": pathnameResolve("/styles"),
   })(config);
 
 module.exports = {
