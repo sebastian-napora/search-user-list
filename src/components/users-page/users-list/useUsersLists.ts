@@ -28,6 +28,8 @@ export const useUsersList = ({ findUserPhrease }: TUseUsersList<"props">): TUseU
       findUserPhrease &&
       usersList.filter(({ name }) => name.toLowerCase().trim().includes(findUserPhrease.toLowerCase().trim()));
 
+    if (!findUserPhrease) return setUsers(usersList);
+
     return filteredUsers && setUsers(filteredUsers);
   };
 
