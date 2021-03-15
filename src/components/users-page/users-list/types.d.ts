@@ -31,8 +31,7 @@ export type TUseUsersListProps = {
 };
 
 export type TUseUsersListReturn = {
-  message: S | NU;
-  data: TUsersDataList[];
+  error: S | NU;
   users: TUsersDataList[];
 };
 

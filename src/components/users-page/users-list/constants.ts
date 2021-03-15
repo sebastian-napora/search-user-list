@@ -1,2 +1,2 @@
 export const USERS = "users";
-export const LOADING = "Please wait loading data...";
+export const LOADING = "No match users...";

@@ -1,20 +1,16 @@
 import { useCallback, useEffect, useState } from "react";
 
-import flow from "lodash.flow";
-
 import { ServiceFactory } from "@api/ServiceFactory";
 
 import { TUsersDataList, TUseUsersList } from "./types";
-
-import { lowerCaseCompareLetters, regexWhiteSpaces } from "./utils";
 
 import * as C from "./constants";
 
 const allUsers = ServiceFactory.get(C.USERS);
 
 export const useUsersList = ({ findUserPhrease }: TUseUsersList<"props">): TUseUsersList<"return"> => {
-  const [data, setUsersList] = useState<TUsersDataList[] | []>([]);
-  const [message, setMessage] = useState<string | null>(null);
+  const [usersList, setUsersList] = useState<TUsersDataList[] | []>([]);
+  const [error, setError] = useState<string | null>(null);
   const [users, setUsers] = useState<TUsersDataList[] | []>([]);
 
   const takeAllUsers = useCallback(async () => {
@@ -23,30 +19,22 @@ export const useUsersList = ({ findUserPhrease }: TUseUsersList<"props">): TUseU
       setUsersList(takeData?.data);
       setUsers(takeData?.data);
     } catch (err) {
-      setMessage(err);
+      setError(err);
     }
-  }, [data.length === 0]);
+  }, [usersList.length === 0]);
 
   const filterData = () => {
-    if (findUserPhrease !== null) {
-      const searchingLetters = flow([regexWhiteSpaces, lowerCaseCompareLetters])(findUserPhrease);
-      const filteredUsers = data.filter(({ name }) =>
-        flow([regexWhiteSpaces, lowerCaseCompareLetters])(name).includes(searchingLetters)
-      );
+    const filteredUsers =
+      findUserPhrease &&
+      usersList.filter(({ name }) => name.toLowerCase().trim().includes(findUserPhrease.toLowerCase().trim()));
 
-      if (!findUserPhrease) return setUsers(data);
-
-      return setUsers(filteredUsers);
-    }
+    return filteredUsers && setUsers(filteredUsers);
   };
 
   useEffect(() => {
-    (async () => await takeAllUsers())();
-  }, []);
-
-  useEffect(() => {
+    usersList.length === 0 && (async () => await takeAllUsers())();
     findUserPhrease !== null && filterData();
   }, [findUserPhrease]);
 
-  return { message, data, users };
+  return { error, users };
 };

@@ -1,7 +1,7 @@
 import { SearchBarProps } from "./types";
 
-import { BASIC_PROPS_INPUT } from "./utils";
-
 import * as S from "./styles";
 
-export default ({ onChange }: SearchBarProps) => <S.StyledInput {...{ ...BASIC_PROPS_INPUT, onChange }} />;
+export default ({ onChange }: SearchBarProps) => (
+  <S.StyledInput {...{ type: "text", placeholder: "Search by user name...", onChange }} />
+);

@@ -5,10 +5,7 @@ import { TUseUsersPage } from "./types";
 export const useUsersPage = (): TUseUsersPage => {
   const [findUserPhrease, setFindUserPhrease] = useState<string | null>(null);
 
-  const onChange = (e: ChangeEvent<HTMLInputElement>): void => {
-    e.preventDefault();
-    setFindUserPhrease(e.target.value);
-  };
+  const onChange = (e: ChangeEvent<HTMLInputElement>): void => setFindUserPhrease(e.target.value);
 
   return { findUserPhrease, onChange };
 };

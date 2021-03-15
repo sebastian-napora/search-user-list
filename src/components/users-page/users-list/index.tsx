@@ -7,9 +7,9 @@ import * as C from "./constants";
 import * as S from "./styles";
 
 export default ({ findUserPhrease }: TUsersListProps) => {
-  const { message, users } = useUsersList({ findUserPhrease });
+  const { error, users } = useUsersList({ findUserPhrease });
 
-  if (message !== null) return <div>{message}</div>;
+  if (error !== null) return <div>{error}</div>;
   if (users.length <= 0) return <div>{C.LOADING}</div>;
 
   return (
