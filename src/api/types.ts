@@ -1,5 +1,5 @@
 import { AxiosResponse } from 'axios';
-import { TUsersDataList } from 'core/typings/Users';
+import { TUsersDataList } from 'src/core/typings/Users';
 
 import users from './users-services';
 

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { device } from '@styles/device';
+import { device } from 'src/styles/device';
 
 const lightGreyColor = css`
   color: #cccccc;

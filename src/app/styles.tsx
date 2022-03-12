@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { device } from '@styles/device';
+import { device } from 'src/styles/device';
 
 const devicePadding = (
   typeDevice: 'mobileSmall' | 'mobileLarge' | 'tablet' | 'laptop' | 'laptopLarge' | 'desktop',

@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GlobalStyles renders properly every add styles from THEMES 1`] = `<div />`;

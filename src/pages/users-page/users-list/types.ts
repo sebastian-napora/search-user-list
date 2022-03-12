@@ -1,4 +1,4 @@
-import { TUsersDataList } from 'core/typings/Users';
+import { TUsersDataList } from 'src/core/typings/Users';
 
 type TFindUserPhrease = string | null;
 

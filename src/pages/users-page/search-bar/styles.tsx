@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { device } from '@styles/device';
+import { device } from 'src/styles/device';
 
 const deviceSizeAndFont = (typeDevice: 'mobileSmall' | 'mobileLarge', maxWidth: number, font: number) => css`
   @media ${device[typeDevice]} {

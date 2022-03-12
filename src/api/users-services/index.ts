@@ -2,7 +2,7 @@ import { AxiosResponse } from 'axios';
 
 import Http from '../HTTP';
 
-import { TUsersDataList } from 'core/typings/Users';
+import { TUsersDataList } from 'src/core/typings/Users';
 
 import { ERROR_MESSAGE, USERS_ENDPOINT } from './constants';
 

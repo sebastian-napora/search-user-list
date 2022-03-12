@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { ERROR_MESSAGE } from '@api/users-services/constants';
-import { ServiceFactory } from '@api/ServiceFactory';
+import { ERROR_MESSAGE } from 'src/api/users-services/constants';
+import { ServiceFactory } from 'src/api/ServiceFactory';
 
-import { TUsersDataList } from 'core/typings/Users';
+import { TUsersDataList } from 'src/core/typings/Users';
 import { TUseUsersList } from './types';
 
 import { USERS } from './constants';
