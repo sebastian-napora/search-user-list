@@ -1,13 +1,23 @@
-import Http from "../HTTP";
+import { AxiosResponse } from 'axios';
 
-import * as C from "./constants";
+import Http from '../HTTP';
+
+import { TUsersDataList } from 'core/typings/Users';
+
+import { ERROR_MESSAGE, USERS_ENDPOINT } from './constants';
 
 export default {
-  async getUsers() {
+  /**
+   * @method getUsers
+   * @description This method handle fetch user list from API. Return list or message about error.
+   */
+  async getUsers(): Promise<AxiosResponse<TUsersDataList[]> | typeof ERROR_MESSAGE> {
     try {
-      return await Http.get(C.USERS_ENDPOINT);
+      return await Http.get(USERS_ENDPOINT);
     } catch (err) {
-      return err && C.ERROR_MESSAGE;
+      console.error(err);
+
+      return ERROR_MESSAGE;
     }
-  },
+  }
 };
