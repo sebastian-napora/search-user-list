@@ -7,10 +7,17 @@ export type TUseUsersListReturn = {
   users: TUsersDataList[];
 };
 
-export type TUseUsersList = ({ findUserPhrease }: { findUserPhrease: TFindUserPhrease }) => {
+export type TUseUsersList = ({
+  findUserPhrease,
+  isThrowError
+}: {
+  findUserPhrease: TFindUserPhrease;
+  isThrowError: boolean;
+}) => {
   usersList: { list: TUsersDataList[] | []; filtredList: TUsersDataList[] | [] };
 };
 
 export type TUsersListProps = {
   findUserPhrease: TFindUserPhrease;
+  isThrowError: boolean;
 };

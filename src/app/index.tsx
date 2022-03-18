@@ -6,6 +6,7 @@ import UsersPage from 'src/pages/users-page';
 import { useApp } from './useApp';
 
 import { Container } from './styles';
+import { GlobalStyles } from 'src/theme/GlobalStyles';
 
 export default (): JSX.Element => {
   const { selectedTheme, themeLoaded } = useApp();
@@ -14,6 +15,7 @@ export default (): JSX.Element => {
     <>
       {themeLoaded && (
         <ThemeProvider theme={selectedTheme}>
+          <GlobalStyles />
           <Container>
             <UsersPage />
           </Container>

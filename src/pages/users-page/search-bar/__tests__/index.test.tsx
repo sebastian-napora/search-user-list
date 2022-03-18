@@ -11,8 +11,8 @@ import SearchBar from '../index';
 afterEach(cleanup);
 
 describe('SearchBar tests', () => {
-  describe('checked render children component SearchBar', () => {
-    it('should render children component well SearchBar', () => {
+  describe('1. Checked render children component SearchBar', () => {
+    it('1.1. Should render children component well SearchBar', () => {
       const { container, unmount } = render(
         <ThemeProvider {...{ theme: THEMES.data.main }}>
           <SearchBar onChange={() => null} />

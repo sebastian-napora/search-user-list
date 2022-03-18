@@ -1,17 +1,17 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { ERROR_MESSAGE } from 'src/api/users-services/constants';
 import { ServiceFactory } from 'src/api/ServiceFactory';
 
 import { TUsersDataList } from 'src/core/typings/Users';
 import { TUseUsersList } from './types';
 
+import { ERROR_MESSAGE } from 'src/api/constants';
 import { USERS } from './constants';
 
 //Take proper service
 const ALL_USERS = ServiceFactory.get(USERS);
 
-export const useUsersList: TUseUsersList = ({ findUserPhrease }) => {
+export const useUsersList: TUseUsersList = ({ findUserPhrease, isThrowError }) => {
   //useStates
   const [usersList, setUsersList] = useState<{ list: TUsersDataList[] | []; filtredList: TUsersDataList[] | [] }>({
     list: [],
@@ -23,8 +23,8 @@ export const useUsersList: TUseUsersList = ({ findUserPhrease }) => {
    * @function takeAllUsers
    * @description This function takes all available users from API.
    */
-  const takeAllUsers = useCallback(async (): Promise<void> => {
-    const response = await ALL_USERS.getUsers();
+  const takeAllUsers = useCallback(async (isThrowError: boolean): Promise<void> => {
+    const response = await ALL_USERS.getUsers(isThrowError);
 
     if (response === ERROR_MESSAGE) {
       //if response is undefined - means some error occured then return empty arrays
@@ -59,7 +59,7 @@ export const useUsersList: TUseUsersList = ({ findUserPhrease }) => {
 
   //useEffects
   useEffect(() => {
-    usersList.list.length === 0 && (async () => await takeAllUsers())();
+    usersList.list.length === 0 && (async () => await takeAllUsers(isThrowError))();
     filterData();
   }, [findUserPhrease]);
 

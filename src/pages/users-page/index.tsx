@@ -16,7 +16,7 @@ export default (): JSX.Element => {
     <Content>
       <Header>{USERS_LIST}</Header>
       <SearchBar onChange={onChange} />
-      <UsersList findUserPhrease={findUserPhrease} />
+      <UsersList findUserPhrease={findUserPhrease} isThrowError={false} />
     </Content>
   );
 };
