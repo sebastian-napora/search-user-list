@@ -18,8 +18,11 @@ export const HTTP = (isThrowError: boolean): AxiosInstance => {
     baseURL: BASE_URL
   });
 
+  //set a proper instance to handling the data
+  const PROPER_INSTANCE = IS_MOCKED_DATA ? HTTP_MOCK : HTTP_INSTANCE;
+
   //inceterceptor
-  HTTP_INSTANCE.interceptors.response.use(
+  PROPER_INSTANCE.interceptors.response.use(
     (response): AxiosResponse<unknown> => response,
     (error): void => {
       console.error(UNABLE_TO_CHECK_RESPONSE_STATUS, error);
@@ -29,5 +32,5 @@ export const HTTP = (isThrowError: boolean): AxiosInstance => {
   //enabled mocked data
   IS_MOCKED_DATA && mockMetadata(HTTP_MOCK, isThrowError);
 
-  return IS_MOCKED_DATA ? HTTP_MOCK : HTTP_INSTANCE;
+  return PROPER_INSTANCE;
 };
