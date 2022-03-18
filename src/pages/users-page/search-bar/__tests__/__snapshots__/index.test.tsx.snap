@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SearchBar tests 1. Checked render children component SearchBar 1.1. Should render children component well SearchBar 1`] = `
+<div>
+  <input
+    class="sc-bdvvtL enLUtv"
+    placeholder="Search by user name..."
+    type="text"
+  />
+</div>
+`;
+
 exports[`SearchBar tests checked render children component SearchBar should render children component well SearchBar 1`] = `
 <div>
   <input

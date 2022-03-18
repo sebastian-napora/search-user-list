@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UsersList tests 1. Checked render children component UsersList 1.1. Should render users list component first time with Margaret and Stefan value and second time only with Marager 1`] = `
+<div>
+  <div
+    class="sc-bdvvtL caeGWH"
+    data-testid="users-list-container"
+  >
+    <span
+      class="sc-gsDKAQ bkqGFx"
+      data-testid="users-list-index-user"
+    >
+      1
+      .
+    </span>
+    <span
+      class="sc-dkPtRN dixAYU"
+      data-testid="users-list-user-details"
+    >
+      Stefan
+       
+      <span
+        class="sc-hKwDye fqVBCI"
+        data-testid="users-list-user-name"
+      >
+        @
+        Set
+      </span>
+    </span>
+  </div>
+  <div
+    class="sc-bdvvtL caeGWH"
+    data-testid="users-list-container"
+  >
+    <span
+      class="sc-gsDKAQ bkqGFx"
+      data-testid="users-list-index-user"
+    >
+      2
+      .
+    </span>
+    <span
+      class="sc-dkPtRN dixAYU"
+      data-testid="users-list-user-details"
+    >
+      Margaret
+       
+      <span
+        class="sc-hKwDye fqVBCI"
+        data-testid="users-list-user-name"
+      >
+        @
+        Set 2
+      </span>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`UsersList tests 1. Checked render children component UsersList 1.1. Should render users list component first time with Margaret and Stefan value and second time only with Marager 2`] = `
+<div>
+  <div
+    class="sc-bdvvtL caeGWH"
+    data-testid="users-list-container"
+  >
+    <span
+      class="sc-gsDKAQ bkqGFx"
+      data-testid="users-list-index-user"
+    >
+      1
+      .
+    </span>
+    <span
+      class="sc-dkPtRN dixAYU"
+      data-testid="users-list-user-details"
+    >
+      Margaret
+       
+      <span
+        class="sc-hKwDye fqVBCI"
+        data-testid="users-list-user-name"
+      >
+        @
+        Set 2
+      </span>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`UsersList tests 1. Checked render children component UsersList 1.2. Should render users list component with info No match users... 1`] = `
+<div>
+  <div>
+    No match users...
+  </div>
+</div>
+`;
