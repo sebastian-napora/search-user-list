@@ -2,7 +2,7 @@
   "name": "search-user-list",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Scherlock90.github.io/search-user-list/",
+  "homepage": "https://sebastian-napora.github.io/search-user-list/",
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
